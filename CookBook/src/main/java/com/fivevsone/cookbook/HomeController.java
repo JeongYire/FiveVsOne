@@ -1,7 +1,5 @@
 package com.fivevsone.cookbook;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -25,7 +23,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("ÇÑ±ÛÀÌ Á¦´ë·Î º¸ÀÌ³ª¿ä?");
+		System.out.println("you can see this ? - > ë‚˜ëŠ” ì •ì´ë ˆì…ë‹ˆë‹¤ ");
 		
 		return "home";
 	}
