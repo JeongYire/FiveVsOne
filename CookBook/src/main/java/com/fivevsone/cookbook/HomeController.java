@@ -25,7 +25,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("한글 깨지지 마쇼잉~");
+		System.out.println("한글이 제대로 보이나요?");
 		
 		return "home";
 	}
