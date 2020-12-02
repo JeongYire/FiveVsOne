@@ -25,7 +25,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("정이레입니다 이게 수정된게 보이시나요?");
+		System.out.println("정이레입니다 이게 수정된게 보이시나요? 2222222222222222222222222");
 		
 		return "home";
 	}
