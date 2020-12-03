@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("you can see this ? - > 한글입니다. 이부분은 한글");
+		System.out.println("you can see this ? - > 한글입니다. 이부분은 한글 한글 한글한글한글");
 		
 		return "home";
 	}
