@@ -23,9 +23,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("you can see this ? - > �ѱ��Դϴ�. �̺κ��� �ѱ�");
-		
-		System.out.println("you can thie see ? Jeongyir -> 정이레 ");
+		System.out.println("you can see this ? - > �ѱ��Դϴ�. �̺κ��� �ѱ� �ѱ� �ѱ��ѱ��ѱ�");
 		
 		return "home";
 	}
