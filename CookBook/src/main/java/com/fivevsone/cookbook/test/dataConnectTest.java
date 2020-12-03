@@ -45,6 +45,7 @@ public class dataConnectTest {
 		
 		
 		
+		System.out.println("성공!");
 	
 		
 	}
