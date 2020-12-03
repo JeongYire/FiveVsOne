@@ -27,6 +27,11 @@ public class HomeController {
 		
 		System.out.println("it is korean -> 정이레 입니다 ");
 		
+		System.out.println("창훈입니다.");
+		
+		System.out.println("이현아");
+		
+		System.out.println("김넷쥬");
 		return "home";
 	}
 	
