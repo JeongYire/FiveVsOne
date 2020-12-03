@@ -11,12 +11,13 @@ import com.fivevsone.cookbook.vo.memberVO;
 public class MemberService implements MemberInterface {
 	
 	@Autowired
-	SqlSession sqlSession;
-
+	MemberDAO dao;
+	
+	
 	@Override
 	public void insertMember(memberVO vo) {
 		
-		sqlSession.insert("memberNS.insertMember");
+		dao.insertMember(vo);
 		
 	}
 	

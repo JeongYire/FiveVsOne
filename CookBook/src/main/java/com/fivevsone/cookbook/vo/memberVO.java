@@ -17,8 +17,19 @@ public class memberVO implements Serializable {
 	private String memEmail;
 	private String memGender;
 	private String memGrade;
+	private int memState;
 	private Date signUpDate;
+	private String bookMark;
+	private String memIntroduce;
 	
+	
+	
+	public int getMemState() {
+		return memState;
+	}
+	public void setMemState(int memState) {
+		this.memState = memState;
+	}
 	public String getMemId() {
 		return memId;
 	}
@@ -67,15 +78,24 @@ public class memberVO implements Serializable {
 	public void setSignUpDate(Date signUpDate) {
 		this.signUpDate = signUpDate;
 	}
-	@Override
-	public String toString() {
-		return "memberVO [memId=" + memId + ", memPwd=" + memPwd + ", memName=" + memName + ", memNickName="
-				+ memNickName + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memGrade=" + memGrade
-				+ ", signUpDate=" + signUpDate + "]";
+	public String getBookMark() {
+		return bookMark;
 	}
-	
+	public void setBookMark(String bookMark) {
+		this.bookMark = bookMark;
+	}
+	public String getMemIntroduce() {
+		return memIntroduce;
+	}
+	public void setMemIntroduce(String memIntroduce) {
+		this.memIntroduce = memIntroduce;
+	}
+	public memberVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public memberVO(String memId, String memPwd, String memName, String memNickName, String memEmail, String memGender,
-			String memGrade, Date signUpDate) {
+			String memGrade, Date signUpDate, String bookMark, String memIntroduce) {
 		super();
 		this.memId = memId;
 		this.memPwd = memPwd;
@@ -85,13 +105,15 @@ public class memberVO implements Serializable {
 		this.memGender = memGender;
 		this.memGrade = memGrade;
 		this.signUpDate = signUpDate;
+		this.bookMark = bookMark;
+		this.memIntroduce = memIntroduce;
 	}
-	
-	public memberVO() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "memberVO [memId=" + memId + ", memPwd=" + memPwd + ", memName=" + memName + ", memNickName="
+				+ memNickName + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memGrade=" + memGrade
+				+ ", signUpDate=" + signUpDate + ", bookMark=" + bookMark + ", memIntroduce=" + memIntroduce + "]";
 	}
-	
-	
 
+	
 }
