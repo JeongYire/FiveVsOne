@@ -29,6 +29,7 @@ public class HomeController {
 		
 		System.out.println("창훈입니다.");
 		
+		System.out.println("이현아");
 		return "home";
 	}
 	
