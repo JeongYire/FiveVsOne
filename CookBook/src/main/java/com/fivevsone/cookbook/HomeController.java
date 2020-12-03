@@ -25,6 +25,8 @@ public class HomeController {
 		
 		System.out.println("you can see this ? - > �ѱ��Դϴ�. �̺κ��� �ѱ� �ѱ� �ѱ��ѱ��ѱ�");
 		
+		System.out.println("it is korean -> 정이레 입니다 ");
+		
 		return "home";
 	}
 	
