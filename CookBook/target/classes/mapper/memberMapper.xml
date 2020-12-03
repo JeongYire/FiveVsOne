@@ -2,8 +2,26 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="recipeNS">
-  <select id="insertMember" parameterType="member">
-    insert into member values(#{})
+<mapper namespace="memberNS">
+  <insert id="insertMember" parameterType="member">
+  <![CDATA[
+    insert into member(memId,memPwd,memName,memNickName,memEmail,memGender,memGrade,memState,signUpDate,bookmark,memIntroduce)
+     values
+     (#{memId},
+     #{memPwd},
+     #{memName},
+     #{memNickName},
+     #{memEmail},
+     #{memGender},
+     10,
+     1,
+     sysdate,
+     #{bookMark},
+     #{memIntroduce}
+     )
+    ]]>
+  </insert>
+  <select id="selectAllMember" resultType="member">
+  select * from member
   </select>
 </mapper>
