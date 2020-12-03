@@ -6,6 +6,6 @@
  <typeAliases>
    
    <typeAlias type="com.fivevsone.cookbook.vo.recipeVO" alias="recipe"/>
-   
+    <typeAlias type="com.fivevsone.cookbook.vo.memberVO" alias="member"/>
  </typeAliases>
 </configuration>

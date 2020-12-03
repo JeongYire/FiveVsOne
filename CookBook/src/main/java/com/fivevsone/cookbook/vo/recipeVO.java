@@ -1,5 +1,7 @@
 package com.fivevsone.cookbook.vo;
 
+import java.util.Date;
+
 public class recipeVO {
 	private int recipeCode;
 	private int natCode;
@@ -14,6 +16,7 @@ public class recipeVO {
 	private String cookTip;
 	private int typeCode;
 	private String typeName;
+	private Date writeTime;
 	
 	
 	public recipeVO() {
@@ -151,6 +154,16 @@ public class recipeVO {
 	}
 
 
+	public Date getWriteTime() {
+		return writeTime;
+	}
+
+
+	public void setWriteTime(Date writeTime) {
+		this.writeTime = writeTime;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -168,6 +181,7 @@ public class recipeVO {
 		result = prime * result + ((sitName == null) ? 0 : sitName.hashCode());
 		result = prime * result + typeCode;
 		result = prime * result + ((typeName == null) ? 0 : typeName.hashCode());
+		result = prime * result + ((writeTime == null) ? 0 : writeTime.hashCode());
 		return result;
 	}
 
@@ -225,11 +239,18 @@ public class recipeVO {
 				return false;
 		} else if (!typeName.equals(other.typeName))
 			return false;
+		if (writeTime == null) {
+			if (other.writeTime != null)
+				return false;
+		} else if (!writeTime.equals(other.writeTime))
+			return false;
 		return true;
 	}
 
+
 	public recipeVO(int recipeCode, int natCode, String natName, int sitCode, String sitName, int amount, int cookTime,
-			int difficult, String material, String cookStep, String cookTip, int typeCode, String typeName) {
+			int difficult, String material, String cookStep, String cookTip, int typeCode, String typeName,
+			Date writeTime) {
 		super();
 		this.recipeCode = recipeCode;
 		this.natCode = natCode;
@@ -244,6 +265,7 @@ public class recipeVO {
 		this.cookTip = cookTip;
 		this.typeCode = typeCode;
 		this.typeName = typeName;
+		this.writeTime = writeTime;
 	}
 
 
@@ -252,7 +274,7 @@ public class recipeVO {
 		return "recipeVO [recipeCode=" + recipeCode + ", natCode=" + natCode + ", natName=" + natName + ", sitCode="
 				+ sitCode + ", sitName=" + sitName + ", amount=" + amount + ", cookTime=" + cookTime + ", difficult="
 				+ difficult + ", material=" + material + ", cookStep=" + cookStep + ", cookTip=" + cookTip
-				+ ", typeCode=" + typeCode + ", typeName=" + typeName + "]";
+				+ ", typeCode=" + typeCode + ", typeName=" + typeName + ", writeTime=" + writeTime + "]";
 	}
 
 
