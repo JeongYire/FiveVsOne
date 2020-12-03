@@ -1,13 +1,14 @@
 package com.fivevsone.cookbook.dao;
 
-import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.fivevsone.cookbook.inter.MemberInterface;
-import com.fivevsone.cookbook.vo.memberVO;
+import com.fivevsone.cookbook.vo.MemberVO;
 
-@Repository
+@Service("MemberService")
 public class MemberService implements MemberInterface {
 	
 	@Autowired
@@ -15,10 +16,16 @@ public class MemberService implements MemberInterface {
 	
 	
 	@Override
-	public void insertMember(memberVO vo) {
+	public void insertMember(MemberVO vo) {
 		
 		dao.insertMember(vo);
 		
+	}
+
+
+	@Override
+	public List<MemberVO> selectAllMember() {
+		return dao.selectAllMember();
 	}
 	
 	

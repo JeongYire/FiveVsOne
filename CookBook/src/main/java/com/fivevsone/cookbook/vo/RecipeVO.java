@@ -3,7 +3,7 @@ package com.fivevsone.cookbook.vo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class recipeVO implements Serializable {
+public class RecipeVO implements Serializable {
 	/**
 	 * 
 	 */
@@ -150,7 +150,7 @@ public class recipeVO implements Serializable {
 	public void setTastyName(String tastyName) {
 		this.tastyName = tastyName;
 	}
-	public recipeVO(int recipeCode, int natCode, String natName, int sitCode, String sitName, int amount, int cookTime,
+	public RecipeVO(int recipeCode, int natCode, String natName, int sitCode, String sitName, int amount, int cookTime,
 			int difficult, String material, String cookStep, String cookTip, int typeCode, String typeName,
 			Date writeTime, int recipeCnt, int recipeStar, int tastyCode, String tastyName) {
 		super();
@@ -174,7 +174,7 @@ public class recipeVO implements Serializable {
 		this.tastyName = tastyName;
 	}
 	
-	public recipeVO() {
+	public RecipeVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
