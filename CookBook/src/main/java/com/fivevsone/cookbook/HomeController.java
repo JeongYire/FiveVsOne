@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		System.out.println("you can see this ? - > �ѱ��Դϴ�. �̺κ��� �ѱ� �ѱ� �ѱ��ѱ��ѱ�");
+		System.out.println("you can see this ? - > 이 부분은 김채연이 한글로 작성하였습니다.");
 		
 		System.out.println("it is korean -> 정이레 입니다 ");
 		
