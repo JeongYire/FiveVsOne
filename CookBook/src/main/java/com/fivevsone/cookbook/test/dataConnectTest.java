@@ -24,22 +24,22 @@ public class dataConnectTest {
 		System.out.println("3차 : sqlSession 객체 주입 확인 " + sqlTemplate);
 		MemberService service = context.getBean("MemberService",MemberService.class);
 		System.out.println("4차 : dao 객체 주입 확인 " + service );
- /*
+ 
 	   MemberVO vo = new MemberVO();
-	   vo.setMemId("yire");
-	   vo.setMemPwd("yire1234");
-	   vo.setMemName("정이레");
-	   vo.setMemNickName("정이레몬");
-	   vo.setMemEmail("wotjd0611@gmail.com");
-	   vo.setMemGender("남자");
-	   vo.setBookMark("1,2,3,4,5,6");
-	   vo.setMemIntroduce("자바 정이레입니다");
+	   vo.setMemId("codus");
+	   vo.setMemPwd("codus12");
+	   vo.setMemName("김채연");
+	   vo.setMemNickName("채니챈");
+	   vo.setMemEmail("sdfsfd@gmail.com");
+	   vo.setMemGender("여자");
+	   vo.setBookMark("1,52,3,46,5,6");
+	   vo.setMemIntroduce("안녕하쇼");
 	   
 	   System.out.println(vo);
 	   
 	   service.insertMember(vo);
 	   System.out.println("성공!");
-	   */
+	   
 		
 		System.out.println(service.selectAllMember());
 		
