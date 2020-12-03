@@ -1,6 +1,7 @@
 package com.fivevsone.cookbook.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class memberVO implements Serializable {
 
@@ -16,6 +17,7 @@ public class memberVO implements Serializable {
 	private String memEmail;
 	private String memGender;
 	private String memGrade;
+	private Date signUpDate;
 	
 	public String getMemId() {
 		return memId;
@@ -59,9 +61,21 @@ public class memberVO implements Serializable {
 	public void setMemGrade(String memGrade) {
 		this.memGrade = memGrade;
 	}
+	public Date getSignUpDate() {
+		return signUpDate;
+	}
+	public void setSignUpDate(Date signUpDate) {
+		this.signUpDate = signUpDate;
+	}
+	@Override
+	public String toString() {
+		return "memberVO [memId=" + memId + ", memPwd=" + memPwd + ", memName=" + memName + ", memNickName="
+				+ memNickName + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memGrade=" + memGrade
+				+ ", signUpDate=" + signUpDate + "]";
+	}
 	
 	public memberVO(String memId, String memPwd, String memName, String memNickName, String memEmail, String memGender,
-			String memGrade) {
+			String memGrade, Date signUpDate) {
 		super();
 		this.memId = memId;
 		this.memPwd = memPwd;
@@ -70,21 +84,13 @@ public class memberVO implements Serializable {
 		this.memEmail = memEmail;
 		this.memGender = memGender;
 		this.memGrade = memGrade;
+		this.signUpDate = signUpDate;
 	}
 	
 	public memberVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public String toString() {
-		return "memberVO [memId=" + memId + ", memPwd=" + memPwd + ", memName=" + memName + ", memNickName="
-				+ memNickName + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memGrade=" + memGrade + "]";
-	}
-	
-	
-	
 	
 	
 
