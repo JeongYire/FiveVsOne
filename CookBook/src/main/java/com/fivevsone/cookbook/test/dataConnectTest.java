@@ -42,6 +42,9 @@ public class dataConnectTest {
 	   */
 		
 		System.out.println(service.selectAllMember());
+		
+		
+		
 	
 		
 	}
