@@ -10,5 +10,6 @@ public interface MemberInterface {
 	
 	public void insertMember(MemberVO vo);
 	public List<MemberVO> selectAllMember();
+	public MemberVO selectOneMember(int memCode);
 
 }

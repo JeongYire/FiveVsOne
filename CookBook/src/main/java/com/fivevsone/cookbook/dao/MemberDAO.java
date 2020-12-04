@@ -27,6 +27,12 @@ public class MemberDAO implements MemberInterface {
 	
 		return sqlSession.selectList("memberNS.selectAllMember");
 	}
+
+	@Override
+	public MemberVO selectOneMember(int memCode) {
+		
+		return sqlSession.selectOne("memberNS.selectOneMember",memCode);
+	}
 	
 
 	

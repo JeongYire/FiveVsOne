@@ -27,6 +27,13 @@ public class MemberService implements MemberInterface {
 	public List<MemberVO> selectAllMember() {
 		return dao.selectAllMember();
 	}
+
+
+	@Override
+	public MemberVO selectOneMember(int memCode) {
+		
+		return dao.selectOneMember(memCode);
+	}
 	
 	
 	

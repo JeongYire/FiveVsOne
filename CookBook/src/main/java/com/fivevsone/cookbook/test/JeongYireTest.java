@@ -9,8 +9,9 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.fivevsone.cookbook.dao.MemberService;
 import com.fivevsone.cookbook.dao.RecipeService;
+import com.fivevsone.cookbook.vo.MemberVO;
 
-public class dataConnectTest {
+public class JeongYireTest {
 	
 
 	
@@ -24,29 +25,31 @@ public class dataConnectTest {
 		System.out.println("3차 : sqlSession 객체 주입 확인 " + sqlTemplate);
 		MemberService service = context.getBean("MemberService",MemberService.class);
 		System.out.println("4차 : dao 객체 주입 확인 " + service );
-		RecipeService reservice = context.getBean("recipeService", RecipeService.class);
-//	   MemberVO vo = new MemberVO();
-//	   vo.setMemId("5vs1");
-//	   vo.setMemPwd("5vs1234");
-//	   vo.setMemName("오대일");
-//	   vo.setMemNickName("대일이");
-//	   vo.setMemEmail("dail@gmail.com");
-//	   vo.setMemGender("남자");
-//	   vo.setBookMark("14,72,66,41,45,6");
-//	   vo.setMemIntroduce("새로운 회원");
-//	   
-//	   System.out.println(vo);
-//	   
-//	   service.insertMember(vo);
-//	   System.out.println("성공!");
-	   
-		
-		System.out.println(service.selectAllMember());
 
-		System.out.println("성공!");
 		
-		System.out.println(reservice.selectAllRecipe());
-		System.out.println("성공");
+		   MemberVO vo = new MemberVO();
+		   
+		 //  vo.setMemId("yire");
+		 //  vo.setMemPwd("yire1234");
+		 //  vo.setMemName("정이레");
+		 //  vo.setMemNickName("정이레몬");
+		 //  vo.setMemEmail("wotjd0611@gmail.com");
+		 //  vo.setMemGender("남자");
+		  // vo.setBookMark("14,72,66,41,45,6");
+		 //  vo.setMemIntroduce("정이레입니다.");
+		   //vo.setSitCode("1,2,3,4,11");
+		  // vo.setNatCode("11,44,23,55");
+		   
+	//	   System.out.println(vo);
+		   
+		//   service.insertMember(vo);
+		   
+		   System.out.println(service.selectAllMember());
+		   
+		   System.out.println("memCode가 0인사람은 ? = " + service.selectOneMember(0));
+	   
+   
+	
 		
 	}
 }
