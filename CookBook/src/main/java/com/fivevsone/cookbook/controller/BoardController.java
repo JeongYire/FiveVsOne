@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.fivevsone.cookbook.dao.MemberService;
+import com.fivevsone.cookbook.dao.RecipeService;
 
 @Controller
 public class BoardController {
@@ -11,5 +12,6 @@ public class BoardController {
 	
 	@Autowired
 	MemberService memberService;
+	RecipeService recipeService;
 
 }

@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.fivevsone.cookbook.dao.MemberService;
-import com.fivevsone.cookbook.vo.MemberVO;
+import com.fivevsone.cookbook.dao.RecipeService;
 
 public class dataConnectTest {
 	
@@ -24,32 +24,29 @@ public class dataConnectTest {
 		System.out.println("3차 : sqlSession 객체 주입 확인 " + sqlTemplate);
 		MemberService service = context.getBean("MemberService",MemberService.class);
 		System.out.println("4차 : dao 객체 주입 확인 " + service );
- 
-	   MemberVO vo = new MemberVO();
-	   vo.setMemId("codus");
-	   vo.setMemPwd("codus12");
-	   vo.setMemName("김채연");
-	   vo.setMemNickName("채니챈");
-	   vo.setMemEmail("sdfsfd@gmail.com");
-	   vo.setMemGender("여자");
-	   vo.setBookMark("1,52,3,46,5,6");
-	   vo.setMemIntroduce("안녕하쇼");
-	   
-	   System.out.println(vo);
-	   
-	   service.insertMember(vo);
-	   System.out.println("성공!");
+		RecipeService reservice = context.getBean("recipeService", RecipeService.class);
+//	   MemberVO vo = new MemberVO();
+//	   vo.setMemId("5vs1");
+//	   vo.setMemPwd("5vs1234");
+//	   vo.setMemName("오대일");
+//	   vo.setMemNickName("대일이");
+//	   vo.setMemEmail("dail@gmail.com");
+//	   vo.setMemGender("남자");
+//	   vo.setBookMark("14,72,66,41,45,6");
+//	   vo.setMemIntroduce("새로운 회원");
+//	   
+//	   System.out.println(vo);
+//	   
+//	   service.insertMember(vo);
+//	   System.out.println("성공!");
 	   
 		
 		System.out.println(service.selectAllMember());
-		
-		
-		
+
 		System.out.println("성공!");
-	
+		
+		System.out.println(reservice.selectAllRecipe());
+		System.out.println("성공");
 		
 	}
-	
-	
-
 }

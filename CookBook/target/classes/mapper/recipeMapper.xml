@@ -6,4 +6,7 @@
   <select id="selectBlog" parameterType="recipe">
     insert into recipe values(recipeCode_seq.nextval,)
   </select>
+  <select id="selectAllRecipe" resultType="recipe">
+	select re.recipecode, na.natName,si.sitName,re.amount,re.cookTime,re.difficult,re.material,re.cookstep,re.cooktip,ct.typeName from recipe re,nationality na,situation si,cooktype ct where ct.typeCode = 10 AND na.natCode = 10 AND si.sitCode = 10
+  </select>
 </mapper>

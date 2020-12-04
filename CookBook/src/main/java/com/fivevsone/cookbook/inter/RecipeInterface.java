@@ -1,5 +1,9 @@
 package com.fivevsone.cookbook.inter;
 
-public interface RecipeInterface {
+import java.util.List;
 
+import com.fivevsone.cookbook.vo.RecipeVO;
+
+public interface RecipeInterface {
+	public List<RecipeVO> selectAllRecipe(); 
 }
