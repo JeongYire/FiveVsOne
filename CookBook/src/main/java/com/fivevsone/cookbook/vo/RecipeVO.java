@@ -3,45 +3,57 @@ package com.fivevsone.cookbook.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RecipeVO implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-	
+	@XmlAttribute
 	private int recipeCode;
 	private int natCode;
 	private String natName;
+	
 	private int sitCode;
 	private String sitName;
+	
 	private int amount;
 	private int cookTime;
 	private int difficult;
 	private String material;
 	private String cookStep;
 	private String cookTip;
+	
 	private int typeCode;
 	private String typeName;
+	
 	private Date writeTime;
 	private int recipeCnt;
 	private int recipeStar;
 	private int tastyCode;
-	private int recipeState;
 	private String tastyName;
 	
+	private String recipeTitle;
+	private String recipeInfo;
+	private int recipeState;
+
 	
+	@XmlTransient
+	private MultipartFile file;
+	@XmlTransient
+	private String searchCondition;
+	@XmlTransient
+	private String searchKeyword;
 	
-	
-	
-	public int getRecipeState() {
-		return recipeState;
+	public RecipeVO() {
+		super();
 	}
-	public void setRecipeState(int recipeState) {
-		this.recipeState = recipeState;
-	}
-	
-	
 	public int getRecipeCode() {
 		return recipeCode;
 	}
@@ -150,50 +162,186 @@ public class RecipeVO implements Serializable {
 	public void setTastyName(String tastyName) {
 		this.tastyName = tastyName;
 	}
-	public RecipeVO(int recipeCode, int natCode, String natName, int sitCode, String sitName, int amount, int cookTime,
-			int difficult, String material, String cookStep, String cookTip, int typeCode, String typeName,
-			Date writeTime, int recipeCnt, int recipeStar, int tastyCode, String tastyName) {
-		super();
-		this.recipeCode = recipeCode;
-		this.natCode = natCode;
-		this.natName = natName;
-		this.sitCode = sitCode;
-		this.sitName = sitName;
-		this.amount = amount;
-		this.cookTime = cookTime;
-		this.difficult = difficult;
-		this.material = material;
-		this.cookStep = cookStep;
-		this.cookTip = cookTip;
-		this.typeCode = typeCode;
-		this.typeName = typeName;
-		this.writeTime = writeTime;
-		this.recipeCnt = recipeCnt;
-		this.recipeStar = recipeStar;
-		this.tastyCode = tastyCode;
-		this.tastyName = tastyName;
+	public String getRecipeTitle() {
+		return recipeTitle;
 	}
-	
-	public RecipeVO() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setRecipeTitle(String recipeTitle) {
+		this.recipeTitle = recipeTitle;
 	}
-	
+	public String getRecipeInfo() {
+		return recipeInfo;
+	}
+	public void setRecipeInfo(String recipeInfo) {
+		this.recipeInfo = recipeInfo;
+	}
+	public int getRecipeState() {
+		return recipeState;
+	}
+	public void setRecipeState(int recipeState) {
+		this.recipeState = recipeState;
+	}
+	@JsonIgnore
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+	@JsonIgnore
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+	@JsonIgnore
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + amount;
+		result = prime * result + ((cookStep == null) ? 0 : cookStep.hashCode());
+		result = prime * result + cookTime;
+		result = prime * result + ((cookTip == null) ? 0 : cookTip.hashCode());
+		result = prime * result + difficult;
+		result = prime * result + ((file == null) ? 0 : file.hashCode());
+		result = prime * result + ((material == null) ? 0 : material.hashCode());
+		result = prime * result + natCode;
+		result = prime * result + ((natName == null) ? 0 : natName.hashCode());
+		result = prime * result + recipeCnt;
+		result = prime * result + recipeCode;
+		result = prime * result + ((recipeInfo == null) ? 0 : recipeInfo.hashCode());
+		result = prime * result + recipeStar;
+		result = prime * result + recipeState;
+		result = prime * result + ((recipeTitle == null) ? 0 : recipeTitle.hashCode());
+		result = prime * result + ((searchCondition == null) ? 0 : searchCondition.hashCode());
+		result = prime * result + ((searchKeyword == null) ? 0 : searchKeyword.hashCode());
+		result = prime * result + sitCode;
+		result = prime * result + ((sitName == null) ? 0 : sitName.hashCode());
+		result = prime * result + tastyCode;
+		result = prime * result + ((tastyName == null) ? 0 : tastyName.hashCode());
+		result = prime * result + typeCode;
+		result = prime * result + ((typeName == null) ? 0 : typeName.hashCode());
+		result = prime * result + ((writeTime == null) ? 0 : writeTime.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RecipeVO other = (RecipeVO) obj;
+		if (amount != other.amount)
+			return false;
+		if (cookStep == null) {
+			if (other.cookStep != null)
+				return false;
+		} else if (!cookStep.equals(other.cookStep))
+			return false;
+		if (cookTime != other.cookTime)
+			return false;
+		if (cookTip == null) {
+			if (other.cookTip != null)
+				return false;
+		} else if (!cookTip.equals(other.cookTip))
+			return false;
+		if (difficult != other.difficult)
+			return false;
+		if (file == null) {
+			if (other.file != null)
+				return false;
+		} else if (!file.equals(other.file))
+			return false;
+		if (material == null) {
+			if (other.material != null)
+				return false;
+		} else if (!material.equals(other.material))
+			return false;
+		if (natCode != other.natCode)
+			return false;
+		if (natName == null) {
+			if (other.natName != null)
+				return false;
+		} else if (!natName.equals(other.natName))
+			return false;
+		if (recipeCnt != other.recipeCnt)
+			return false;
+		if (recipeCode != other.recipeCode)
+			return false;
+		if (recipeInfo == null) {
+			if (other.recipeInfo != null)
+				return false;
+		} else if (!recipeInfo.equals(other.recipeInfo))
+			return false;
+		if (recipeStar != other.recipeStar)
+			return false;
+		if (recipeState != other.recipeState)
+			return false;
+		if (recipeTitle == null) {
+			if (other.recipeTitle != null)
+				return false;
+		} else if (!recipeTitle.equals(other.recipeTitle))
+			return false;
+		if (searchCondition == null) {
+			if (other.searchCondition != null)
+				return false;
+		} else if (!searchCondition.equals(other.searchCondition))
+			return false;
+		if (searchKeyword == null) {
+			if (other.searchKeyword != null)
+				return false;
+		} else if (!searchKeyword.equals(other.searchKeyword))
+			return false;
+		if (sitCode != other.sitCode)
+			return false;
+		if (sitName == null) {
+			if (other.sitName != null)
+				return false;
+		} else if (!sitName.equals(other.sitName))
+			return false;
+		if (tastyCode != other.tastyCode)
+			return false;
+		if (tastyName == null) {
+			if (other.tastyName != null)
+				return false;
+		} else if (!tastyName.equals(other.tastyName))
+			return false;
+		if (typeCode != other.typeCode)
+			return false;
+		if (typeName == null) {
+			if (other.typeName != null)
+				return false;
+		} else if (!typeName.equals(other.typeName))
+			return false;
+		if (writeTime == null) {
+			if (other.writeTime != null)
+				return false;
+		} else if (!writeTime.equals(other.writeTime))
+			return false;
+		return true;
+	}
 	@Override
 	public String toString() {
-		return "recipeVO [recipeCode=" + recipeCode + ", natCode=" + natCode + ", natName=" + natName + ", sitCode="
+		return "RecipeVO [recipeCode=" + recipeCode + ", natCode=" + natCode + ", natName=" + natName + ", sitCode="
 				+ sitCode + ", sitName=" + sitName + ", amount=" + amount + ", cookTime=" + cookTime + ", difficult="
 				+ difficult + ", material=" + material + ", cookStep=" + cookStep + ", cookTip=" + cookTip
 				+ ", typeCode=" + typeCode + ", typeName=" + typeName + ", writeTime=" + writeTime + ", recipeCnt="
 				+ recipeCnt + ", recipeStar=" + recipeStar + ", tastyCode=" + tastyCode + ", tastyName=" + tastyName
-				+ "]";
+				+ ", recipeTitle=" + recipeTitle + ", recipeInfo=" + recipeInfo + ", recipeState=" + recipeState
+				+ ", file=" + file + ", searchCondition=" + searchCondition + ", searchKeyword=" + searchKeyword + "]";
 	}
 	
-	
-	
-	
-	
-	
-
 
 }
