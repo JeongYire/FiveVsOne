@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="replyNS">
+  	<insert id="insertReply" parameterType="reply">
+  		<![CDATA[
+			insert into reply(commentNum, recipeCode, memId, memGrade, comments, commentTime) values(commentNum_seq.nextval, #{recipeCode}, #{memId}, #{memGrade}, #{comments}, sysdate)
+		]]>
+  	</insert>
+  	<select id="selectOneReply">
+  		select comments from reply where memId=#{memId}
+  	</select>
+  	<delete id="deleteMemberReply">
+  		delete comments from reply where memId=#{memId};
+  	</delete>
+  	<delete id="deleteOneReply">
+  		delete comments from reply where commentNum=#{commentNum};
+  	</delete>
+  	<update id="updateReply">
+  		update comments set comments=#{comments} from reply where commentNum=#{commentNum}
+  	</update>
+  </mapper>
