@@ -2,15 +2,54 @@ package com.fivevsone.cookbook.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fivevsone.cookbook.dao.MemberService;
 import com.fivevsone.cookbook.dao.RecipeService;
+import com.fivevsone.cookbook.vo.RecipeVO;
 
 @Controller
 public class RecipeController {
-	// BoardController 는 정이레가 임시로 붙인 이름입니다 컨트롤러를 담당하시는분이 이름을 정하세요
 	
 	@Autowired
-	MemberService memberService;
 	RecipeService recipeService;
+	
+	@RequestMapping("/insertRecipe.do")
+	public String insertRecipe(RecipeVO vo) {
+		recipeService.insertRecipe(vo);
+		return "redirect:getRecipeList.do";
+		
+	}
+	
+	@RequestMapping("/updateRecipe.do")
+	public String updateRecipe(RecipeVO vo) {
+		recipeService.updateRecipe(vo);
+		return "redirect:getRecipeList.do";
+		
+	}
+	
+	@RequestMapping("/deleteRecipe.do")
+	public String deleteRecipe(RecipeVO vo) {
+		recipeService.insertRecipe(vo);
+		return "redirect:getRecipeList.do";
+		
+	}
+	
+	@RequestMapping("/getRecipe.do")
+	public String selectOneRecipe(RecipeVO vo, Model model) {
+		model.addAttribute("recipe", recipeService.selectOneRecipe(vo) );
+		return "getRecipe";
+		
+	}
+	
+	@RequestMapping("/getRecipeList.do")
+	public String selectAllRecipe(RecipeVO vo, Model model) {
+		model.addAttribute("recipeList", recipeService.selectAllRecipe());
+		return "getRecipeList";
+		
+	}
+	
+	
+	
+	
 }
